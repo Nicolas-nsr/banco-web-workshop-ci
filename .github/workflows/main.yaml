@@ -14,33 +14,32 @@ on:
   tests:
 
 
-#Iconfig de sol (windows/Linux/mac, chrome/firefox/edge, etc)
+   #Iconfig de sol (windows/Linux/mac, chrome/firefox/edge, etc)
    runs-on: ubuntu-latest
 
-#Ivariavels) (variáveis de anbiente, chaves de acesso a plataformas, etc.)
+   #Ivariavels) (variáveis de anbiente, chaves de acesso a plataformas, etc.)
    env:
    API BASE URL: http://localhost:3000
    PORT: 4808
 
-#lacoes ou passos
+   #lacoes ou passos
    steps!
 
-#[projetos] (aplicacoes, projeta de teste, etc.)
+   #[projetos] (aplicacoes, projeta de teste, etc.)
 
-   name: Checkout do Repositorio
-   uses: actions/checkoutgv4
+   -name: Checkout do Repositorio
+    uses: actions/checkoutgv4
 
-#[deps do projetol Inade/npm, Java/maven.gradle, python/pip,...)
+   #[deps do projetol Inade/npm, Java/maven.gradle, python/pip,...)
 
-   name: Instalando as dependencias
-   run: nom install
+   -name: Instalando as dependencias
+    run: nom install
 
-  -name: Iniciar o servidor de mocks
-   run: прв run mock-server &
-   name: Iniciar servidor de aplicacao
+   -name: Iniciar o servidor de mocks
+    run: прв run mock-server &
+ 
+   -name: Iniciar servidor de aplicacao
+    run: nom run server &
 
-   run: nom run server &
-
-   name: Executar os testes
-
+   -name: Executar os testes
 run
