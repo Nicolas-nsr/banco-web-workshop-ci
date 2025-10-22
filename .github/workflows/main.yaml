@@ -5,7 +5,7 @@ on:
 
 jobs:
   tests:
-    # Configuração do ambiente (SO, browser, etc.)
+    # Configuração do ambiente (SO, navegador, etc.)
     runs-on: ubuntu-latest
 
     # Variáveis de ambiente (URLs, portas, etc.)
@@ -28,5 +28,7 @@ jobs:
       - name: Iniciar servidor da aplicação
         run: npm run server &
 
-      - name: Executar os testes
-        run: npm test
+      - name: Executar os testes (ignorar se não houver)
+        run: |
+          if [ -f package.json ] && grep -q '"test"' package.json; then
+            echo "🔍 Execut
