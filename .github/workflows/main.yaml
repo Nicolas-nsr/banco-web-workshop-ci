@@ -25,7 +25,7 @@ on:
    #lacoes ou passos
    steps!
 
-   #[projetos] (aplicacoes, projeta de teste, etc.)
+    #[projetos] (aplicacoes, projeta de teste, etc.)
 
    -name: Checkout do Repositorio
     uses: actions/checkoutgv4
