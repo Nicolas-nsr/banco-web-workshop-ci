@@ -1,15 +1,58 @@
 name: CI Mentoria
 
-#Gatilhos
- on:
-   workflow_dispatch: 
+All Bookmarks
 
-jobs:
+Summary
+
+on:
+
+Jobs
+
+tests
+
+#gatithos
+
+workflow_dispatch:
+
+ jobs:
+
   tests:
 
-#[config SO] (windows)
-runs-on: Ubuntu-latest
+  Run details
 
-#[variáveis (variáveis de ambiente, chaves de acesso)]
-env: 
-API_BASE_URL:localhost
+   Usage
+
+
+#Iconfig de sol (windows/Linux/mac, chrome/firefox/edge, ...
+
+    Workflow file
+
+
+    runs-on: ubuntu-latest
+
+#Ivariavels) (variáveis de anbiente, chaves de acesso a plataformas, etc.)
+ API BASE URL: http://localhost:3000
+ PORT: 4808
+
+#lacoes ou passos
+ steps!
+
+#[projetos] (aplicacoes, projeta de teste, etc.)
+
+name: Checkout do Repositorio
+uses: actions/checkoutgv4
+
+[deps do projetol Inade/npm, Java/maven.gradle, python/pip,...)
+
+ name: Instalando as dependencias
+ run: nom install
+
+  -name: Iniciar o servidor de mocks
+  run: прв run mock-server &
+name: Iniciar servidor de aplicacao
+
+run: nom run server &
+
+name: Executar os testes
+
+run
