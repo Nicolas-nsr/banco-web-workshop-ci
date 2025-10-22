@@ -6,3 +6,9 @@ name: CI Mentoria
 
 jobs:
   tests:
+
+#[config SO] (windows)
+runs-on: Ubuntu-latest
+
+#[variáveis (variáveis de ambiente, chaves de acesso)]
+
