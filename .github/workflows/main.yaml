@@ -11,4 +11,5 @@ jobs:
 runs-on: Ubuntu-latest
 
 #[variáveis (variáveis de ambiente, chaves de acesso)]
-
+env: 
+API_BASE_URL:localhost
