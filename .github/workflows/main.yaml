@@ -1,45 +1,32 @@
 name: CI Mentoria
 
-All Bookmarks
-
-Summary
-
 on:
- workflow_dispatch:
+  workflow_dispatch:
 
-#gatithos
-
- jobs:
-
+jobs:
   tests:
+    # Configuração do ambiente (SO, browser, etc.)
+    runs-on: ubuntu-latest
 
+    # Variáveis de ambiente (URLs, portas, etc.)
+    env:
+      API_BASE_URL: http://localhost:3000
+      PORT: 4808
 
-   #Iconfig de sol (windows/Linux/mac, chrome/firefox/edge, etc)
-   runs-on: ubuntu-latest
+    steps:
+      # [projetos] (aplicações, repositórios de teste, etc.)
+      - name: Checkout do Repositório
+        uses: actions/checkout@v4
 
-   #Ivariavels) (variáveis de anbiente, chaves de acesso a plataformas, etc.)
-   env:
-   API BASE URL: http://localhost:3000
-   PORT: 4808
+      # [dependências do projeto] (Node/npm, Java/maven, Python/pip, etc.)
+      - name: Instalando as dependências
+        run: npm install
 
-   #lacoes ou passos
-   steps!
+      - name: Iniciar o servidor de mocks
+        run: npm run mock-server &
 
-    #[projetos] (aplicacoes, projeta de teste, etc.)
+      - name: Iniciar servidor da aplicação
+        run: npm run server &
 
-   -name: Checkout do Repositorio
-    uses: actions/checkoutgv4
-
-   #[deps do projetol Inade/npm, Java/maven.gradle, python/pip,...)
-
-   -name: Instalando as dependencias
-    run: nom install
-
-   -name: Iniciar o servidor de mocks
-    run: прв run mock-server &
- 
-   -name: Iniciar servidor de aplicacao
-    run: nom run server &
-
-   -name: Executar os testes
-run
+      - name: Executar os testes
+        run: npm test
